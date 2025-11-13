@@ -8,14 +8,14 @@ Designed for high-quality data exploration **without writing SQL**.
 
 | Category | Description |
 | :--- | :--- |
-| **🧠 NL → SQL Generation** | Uses **Gemini 2.5 Flash** to translate natural language into SQL. |
-| **⚡ Execution Engine** | Runs generated SQL safely on **DuckDB** with join support. |
-| **📊 Frontend Dashboard** | **Next.js** app showing results, tables, bar-charts & SQL query block. |
-| **📜 Natural Language Insights** | **Gemini 2.5 Pro** summarizes SQL results into human-friendly insights. |
-| **💬 Chat Interface** | Full conversational chat with message bubbles and loading states. |
-| **🔌 CORS Enabled** | Ready for local dev or multi-service integration. |
-| **🧼 SQL Sanitization** | Removes markdown fences & ensures **SELECT-only** execution. |
-| **🔍 Debug Mode (/ask-raw)** | Second endpoint to inspect exact generated SQL. |
+| ** NL → SQL Generation** | Uses **Gemini 2.5 Flash** to translate natural language into SQL. |
+| ** Execution Engine** | Runs generated SQL safely on **DuckDB** with join support. |
+| ** Frontend Dashboard** | **Next.js** app showing results, tables, bar-charts & SQL query block. |
+| ** Natural Language Insights** | **Gemini 2.5 Pro** summarizes SQL results into human-friendly insights. |
+| ** Chat Interface** | Full conversational chat with message bubbles and loading states. |
+| ** CORS Enabled** | Ready for local dev or multi-service integration. |
+| ** SQL Sanitization** | Removes markdown fences & ensures **SELECT-only** execution. |
+| ** Debug Mode (/ask-raw)** | Second endpoint to inspect exact generated SQL. |
 
 ---
 
@@ -115,13 +115,13 @@ http://localhost:3000/chat
     styles, libs, hooks...
 
 
-### How NL → SQL → Insights Works
-1. Gemini (Flash) converts question → SQL
+## How NL → SQL → Insights Works
+### 1. Gemini (Flash) converts question → SQL
 
 Your query:
-
+```
 “List top 10 sellers”
-
+```
 Becomes:
 ```
 SELECT seller_id, COUNT(*) AS total_orders
@@ -131,19 +131,19 @@ ORDER BY total_orders DESC
 LIMIT 10
 ```
 
-2. SQL is cleaned (no ``` fences, prefixes, etc.)
-3. DuckDB executes query safely
+### 2. SQL is cleaned (no ``` fences, prefixes, etc.)
+### 3. DuckDB executes query safely
 
 Only SELECT queries allowed.
 
-4. Gemini (Pro) generates a business-summary
+### 4. Gemini (Pro) generates a business-summary
 
 E.g.:
 
 "The top 10 sellers handle between 1,000–1,800 orders, with the leading seller ahead by…”
 
-5. Next.js displays all of it beautifully.
-📊 Sample Output (Frontend)
+### 5. Next.js displays all of it beautifully.
+ Sample Output (Frontend)
 <img width="1919" height="865" alt="image" src="https://github.com/user-attachments/assets/2f3b1fef-3065-410d-86a6-644694e2138c" />
 
-Supports any DuckDB-joinable question
+### Supports any DuckDB-joinable question
