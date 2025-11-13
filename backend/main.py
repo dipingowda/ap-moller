@@ -18,7 +18,7 @@ load_dotenv()
 DB_PATH = os.getenv("DUCKDB_PATH", "olist.duckdb")
 
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyCZ1FGMDUFdQ3aZVIxWkogvRIeg1kuLPVA")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 DEFAULT_LIMIT = int(os.getenv("DEFAULT_LIMIT", "200"))
 
 
