@@ -33,7 +33,7 @@ graph LR
     E --> F[Query Results];
     F --> G[Gemini Summary Generator];
     G --> H[Next.js Dashboard];
-    F --> H;# 🔍 Natural Language SQL Agent (FastAPI + Gemini + DuckDB + Next.js)
+    F --> H;
 ```
 
 # Backend (FastAPI + Gemini + DuckDB)
